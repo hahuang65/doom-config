@@ -241,7 +241,7 @@ Use ~SPC a p~ to set priorities
 * Editor Settings
 
 #+begin_src elisp
-(setq display-line-numbers-type t) ;; Set to `nil' to disable, `relative' for relative numbers
+(setq display-line-numbers-type 'relative) ;; Set to `nil' to disable, `relative' for relative numbers
 (after! evil-snipe (evil-snipe-mode -1)) ;; Disable evil-snipe mode to restore default evil-substitute behavior
 
 ;; Make vertical splits open on the right and horizontal splits open below
