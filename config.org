@@ -238,6 +238,15 @@ Use ~SPC a p~ to set priorities
       :desc "Set TODO priority" "a p" #'org-priority)
 #+end_src
 
+Use ~SPC m L~ to insert an link (without any prefixes)
+
+#+begin_src elisp
+(map! :after evil-org
+      :map evil-org-mode-map
+      :leader
+      :desc "Insert link" "m L" #'org-insert-link)
+#+end_src
+
 * Editor Settings
 
 #+begin_src elisp
