@@ -149,40 +149,22 @@ Use backspace to go to the previous org page
       :n "DEL" #'org-mark-ring-goto)
 #+end_src
 
-Open today's journal file with ~SPC j j~
+Open today's journal file with ~SPC o j~
 
 #+begin_src elisp
 (map! :after evil-org
       :map evil-org-mode-map
       :leader
-      :desc "Open today's journal page" "j j" #'org-journal-open-current-journal-file)
+      :desc "Open today's journal page" "o j" #'org-journal-open-current-journal-file)
 #+end_src
 
-Open the previous journal file with ~SPC j p~
+File finder in the journal directory with ~SPC f j~
 
 #+begin_src elisp
 (map! :after evil-org
       :map evil-org-mode-map
       :leader
-      :desc "Open previous journal page" "j p" #'org-journal-open-previous-entry)
-#+end_src
-
-Open the next journal file with ~SPC j n~
-
-#+begin_src elisp
-(map! :after evil-org
-      :map evil-org-mode-map
-      :leader
-      :desc "Open next journal page" "j n" #'org-journal-open-next-entry)
-#+end_src
-
-File finder in the journal directory with ~SPC j o~
-
-#+begin_src elisp
-(map! :after evil-org
-      :map evil-org-mode-map
-      :leader
-      :desc "Open journal page finder" "j o" (cmd! (let ((default-directory org-journal-dir))
+      :desc "Open journal page finder" "f j" (cmd! (let ((default-directory org-journal-dir))
                                                    (call-interactively #'find-file))))
 #+end_src
 
@@ -191,6 +173,16 @@ Open ~Main.org~ with ~SPC o m~
 #+begin_src elisp
 (map! :leader
       :desc "Open Main.org" "o m" (cmd! (find-file (concat org-directory "Main.org"))))
+#+end_src
+
+File finder in the org-mode directory with ~SPC f o~
+
+#+begin_src elisp
+(map! :after evil-org
+      :map evil-org-mode-map
+      :leader
+      :desc "Open journal page finder" "f o" (cmd! (let ((default-directory org-directory))
+                                                   (call-interactively #'find-file))))
 #+end_src
 
 Use ~SPC a s~ to schedule a TODO
@@ -236,15 +228,6 @@ Use ~SPC a p~ to set priorities
       :map evil-org-mode-map
       :leader
       :desc "Set TODO priority" "a p" #'org-priority)
-#+end_src
-
-Use ~SPC m L~ to insert an link (without any prefixes)
-
-#+begin_src elisp
-(map! :after evil-org
-      :map evil-org-mode-map
-      :leader
-      :desc "Insert link" "m L" #'org-insert-link)
 #+end_src
 
 * Editor Settings
