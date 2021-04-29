@@ -69,6 +69,7 @@ For backgrounds to be properly colored in terminal mode set this property, and [
 (setq org-journal-dir "~/.org/journal") ;; Set the default directory for journal files
 (setq org-hide-leading-stars t) ;; Hide extra stars in front of headers
 (setq org-hide-emphasis-markers t) ;; Hide extra font markers, like ~ or * around text
+(setq org-startup-with-inline-images t) ;; Enable inline images by default
 #+end_src
 
 ** Agenda
