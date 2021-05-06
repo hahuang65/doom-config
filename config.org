@@ -142,6 +142,12 @@ Creates a custom link for linking to Summit Partners' Jira board
 
 ** Keybinds
 
+Use ~C-v~ to paste in insert mode
+
+#+begin_src elisp
+(map! :i "C-v" #'evil-paste-after)
+#+end_src
+
 Use backspace to go to the previous org page
 
 #+begin_src elisp
