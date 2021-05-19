@@ -51,5 +51,3 @@
 
 ;; Make theme colors correct (uncomment if using terminal mode)
 ;; (package! solaire-mode :disable t)
-
-(package! haml-mode)
